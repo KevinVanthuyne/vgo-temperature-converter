@@ -26,22 +26,22 @@ namespace View
         }
 
         private void ConvertToCelsius(object sender, RoutedEventArgs e)
-        {
-            String str = textBox.Text;
+        {   
+            // read from Fahrenheit textbox
+            String str = FahrenheitTextBox.Text;
             var degrees = double.Parse(str);
             // convert Fahrenheit to Celsius
             degrees = Math.Round((degrees - 32) / 1.8, 2);
-            // display in textbox
-            textBox.Text = degrees.ToString();
+            // display in celsius textbox
+            CelsiusTextBox.Text = degrees.ToString();
         }
 
         private void ConvertToFahrenheit(object sender, RoutedEventArgs e)
         {
-            String str = textBox.Text;
+            String str = CelsiusTextBox.Text;
             var degrees = double.Parse(str);
             degrees = Math.Round(degrees * 1.8 + 32, 2);
-            // display in textbox
-            textBox.Text = degrees.ToString();
+            FahrenheitTextBox.Text = degrees.ToString();
         }
     }
 }
