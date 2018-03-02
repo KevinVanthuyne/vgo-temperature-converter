@@ -7,10 +7,24 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <StackPanel>
-        <TextBlock Text="Celsius:" Background="LightGray" FontWeight="Bold" Padding="2" FontSize="16"/>
+        <TextBlock Text="Celsius:" FontWeight="Bold" Padding="2" FontSize="16">
+            <TextBlock.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="Gray" Offset="0" />
+                    <GradientStop Color="White" Offset="1" />
+                </LinearGradientBrush>
+            </TextBlock.Background>
+        </TextBlock>
         <TextBox x:Name="CelsiusTextBox" FontSize="16" TextAlignment="Center"/>
 
-        <TextBlock Text="Fahrenheit:" Background="LightGray" FontWeight="Bold" Padding="2" FontSize="16"/>
+        <TextBlock Text="Fahrenheit:" FontWeight="Bold" Padding="2" FontSize="16">
+            <TextBlock.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="Gray" Offset="0" />
+                    <GradientStop Color="White" Offset="1" />
+                </LinearGradientBrush>
+            </TextBlock.Background>
+        </TextBlock>
         <TextBox x:Name="FahrenheitTextBox" FontSize="16" TextAlignment="Center"/>
         
         <Button Content="Convert to Celsius" Click="ConvertToCelsius"/>
