@@ -27,8 +27,13 @@ namespace View
 
         private void ConvertToCelsius(object sender, RoutedEventArgs e)
         {
-            // MessageBox.Show(this, "You clicked a button", "Clicked!");
-            textBox.Text = "You clicked";
+            String str = textBox.Text;
+            var degrees = double.Parse(str);
+            // convert Fahrenheit to Celsius
+            degrees = Math.Round((degrees - 32) / 1.8, 2);
+            // display in textbox
+            textBox.Text = degrees.ToString();
         }
     }
 }
+
