@@ -34,6 +34,15 @@ namespace View
             // display in textbox
             textBox.Text = degrees.ToString();
         }
+
+        private void ConvertToFahrenheit(object sender, RoutedEventArgs e)
+        {
+            String str = textBox.Text;
+            var degrees = double.Parse(str);
+            degrees = Math.Round(degrees * 1.8 + 32, 2);
+            // display in textbox
+            textBox.Text = degrees.ToString();
+        }
     }
 }
 
