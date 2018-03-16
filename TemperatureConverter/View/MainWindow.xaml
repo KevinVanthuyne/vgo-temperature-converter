@@ -31,8 +31,7 @@
     <StackPanel>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -41,13 +40,11 @@
             
             <TextBlock Grid.Row="0" Text="Celsius:" Style="{StaticResource labelStyle}" />
             <TextBox Grid.Row="1" x:Name="CelsiusTextBox" Style="{StaticResource boxStyle}"/>
-            <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Content="Convert" Click="ConvertCelsius" Style="{StaticResource buttonStyle}"/>
         </Grid>
 
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -56,13 +53,11 @@
 
             <TextBlock Grid.Row="0" Text="Fahrenheit:" Style="{StaticResource labelStyle}"/>
             <TextBox Grid.Row="1" x:Name="FahrenheitTextBox" Style="{StaticResource boxStyle}"/>
-            <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Content="Convert" Click="ConvertFahrenheit" Style="{StaticResource buttonStyle}"/>
         </Grid>
 
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -71,7 +66,6 @@
 
             <TextBlock Grid.Row="0" Text="Kelvin:" Style="{StaticResource labelStyle}"/>
             <TextBox Grid.Row="1" x:Name="KelvinTextBox" Style="{StaticResource boxStyle}"/>
-            <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Content="Convert" Click="ConvertKelvin" Style="{StaticResource buttonStyle}"/>
         </Grid>
 
     </StackPanel>
