@@ -65,7 +65,7 @@
             </Grid.RowDefinitions>
 
             <TextBlock Grid.Row="0" Text="Kelvin:" Style="{StaticResource labelStyle}"/>
-            <TextBox Grid.Row="1" x:Name="KelvinTextBox" Style="{StaticResource boxStyle}"/>
+            <TextBox Grid.Row="1" Text="{Binding ElementName=Slider, Path=Value, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource boxStyle}"/>
         </Grid>
 
         <Slider x:Name="Slider" Minimum="0" Maximum="1000" ValueChanged="SliderValueChanged" />

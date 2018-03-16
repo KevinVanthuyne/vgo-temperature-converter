@@ -26,7 +26,7 @@ namespace View
         {
             InitializeComponent();
         }
-
+        /*
         private void ConvertFahrenheit(object sender, RoutedEventArgs e)
         {   
             // read from Fahrenheit textbox
@@ -51,7 +51,7 @@ namespace View
             FahrenheitTextBox.Text = fahrenheit.ToString();
             KelvinTextBox.Text = kelvin.ToString();
         }
-
+        */
         private void ConvertKelvin(double kelvin)
         {
             var celsius = Math.Round(kelvin - 273.15, RoundTo);
@@ -64,9 +64,9 @@ namespace View
         private void SliderValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             var kelvin = Math.Round(Slider.Value, RoundTo);
-            KelvinTextBox.Text = kelvin.ToString();
+            //KelvinTextBox.Text = kelvin.ToString();
 
-            ConvertKelvin(kelvin);
+            //ConvertKelvin(kelvin);
         }
     }
 }
