@@ -20,6 +20,8 @@ namespace View
     /// </summary>
     public partial class MainWindow : Window
     {
+        private int RoundTo = 3;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -50,16 +52,21 @@ namespace View
             KelvinTextBox.Text = kelvin.ToString();
         }
 
-        private void ConvertKelvin(object sender, RoutedEventArgs e)
+        private void ConvertKelvin(double kelvin)
         {
-            String str = KelvinTextBox.Text;
-            var kelvin = double.Parse(str);
-
-            var celsius = Math.Round(kelvin - 273.15, 2);
-            var fahrenheit = Math.Round(kelvin * 9 / 5 - 459.67, 2);
+            var celsius = Math.Round(kelvin - 273.15, RoundTo);
+            var fahrenheit = Math.Round(kelvin * 9 / 5 - 459.67, RoundTo);
 
             FahrenheitTextBox.Text = fahrenheit.ToString();
             CelsiusTextBox.Text = celsius.ToString();
+        }
+
+        private void SliderValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            var kelvin = Math.Round(Slider.Value, RoundTo);
+            KelvinTextBox.Text = kelvin.ToString();
+
+            ConvertKelvin(kelvin);
         }
     }
 }

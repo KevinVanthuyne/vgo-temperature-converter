@@ -68,5 +68,7 @@
             <TextBox Grid.Row="1" x:Name="KelvinTextBox" Style="{StaticResource boxStyle}"/>
         </Grid>
 
+        <Slider x:Name="Slider" Minimum="0" Maximum="1000" ValueChanged="SliderValueChanged" />
+
     </StackPanel>
 </Window>
