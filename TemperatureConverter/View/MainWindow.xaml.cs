@@ -21,8 +21,6 @@ namespace View
     /// </summary>
     public partial class MainWindow : Window
     {
-        private int RoundTo = 3;
-
         public MainWindow()
         {
             InitializeComponent();
