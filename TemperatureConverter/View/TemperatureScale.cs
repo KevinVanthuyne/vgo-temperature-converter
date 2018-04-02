@@ -1,53 +1,55 @@
-﻿
-public interface ITemperatureScale
+﻿namespace View
 {
-    string Name { get; }
-
-    double ConvertToKevin(double temperature);
-    double ConvertFromKelvin(double kelvin);
-}
-
-public class KelvinTemperatureScale : ITemperatureScale
-{
-    public string Name => "Kelvin";
-
-    public double ConvertFromKelvin(double kelvin)
+    public interface ITemperatureScale
     {
-        return kelvin;
+        string Name { get; }
+
+        double ConvertToKevin(double temperature);
+        double ConvertFromKelvin(double kelvin);
     }
 
-    public double ConvertToKevin(double kelvin)
+    public class KelvinTemperatureScale : ITemperatureScale
     {
-        return kelvin;
-    }
-}
+        public string Name => "Kelvin";
 
-public class CelsiusTemperatureScale : ITemperatureScale
-{
-    public string Name => "Celsius";
+        public double ConvertFromKelvin(double kelvin)
+        {
+            return kelvin;
+        }
 
-    public double ConvertFromKelvin(double kelvin)
-    {
-        return kelvin - 273.15;
-    }
-
-    public double ConvertToKevin(double celsius)
-    {
-        return celsius + 273.15;
-    }
-}
-
-public class FahrenheitTemperatureScale : ITemperatureScale
-{
-    public string Name => "Fahrenheit";
-
-    public double ConvertFromKelvin(double kelvin)
-    {
-        return kelvin * 9 / 5 - 459.67;
+        public double ConvertToKevin(double kelvin)
+        {
+            return kelvin;
+        }
     }
 
-    public double ConvertToKevin(double fahrenheit)
+    public class CelsiusTemperatureScale : ITemperatureScale
     {
-        return (fahrenheit + 459.67) * 5 / 9;
+        public string Name => "Celsius";
+
+        public double ConvertFromKelvin(double kelvin)
+        {
+            return kelvin - 273.15;
+        }
+
+        public double ConvertToKevin(double celsius)
+        {
+            return celsius + 273.15;
+        }
+    }
+
+    public class FahrenheitTemperatureScale : ITemperatureScale
+    {
+        public string Name => "Fahrenheit";
+
+        public double ConvertFromKelvin(double kelvin)
+        {
+            return kelvin * 9 / 5 - 459.67;
+        }
+
+        public double ConvertToKevin(double fahrenheit)
+        {
+            return (fahrenheit + 459.67) * 5 / 9;
+        }
     }
 }
