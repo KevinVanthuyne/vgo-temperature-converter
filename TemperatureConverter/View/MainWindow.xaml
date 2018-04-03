@@ -29,10 +29,14 @@
         </Style>
         <local:TemperatureConvertor x:Key="celsiusConvertor">
             <local:TemperatureConvertor.TemperatureScale>
-                <local:CelsiusTemperatureConvertor />
+                <local:CelsiusTemperatureScale />
             </local:TemperatureConvertor.TemperatureScale>
         </local:TemperatureConvertor>
-        <local:FahrenheitConverter x:Key="fahrenheitConvertor" />
+        <local:TemperatureConvertor x:Key="fahrenheitConvertor">
+            <local:TemperatureConvertor.TemperatureScale>
+                <local:FahrenheitTemperatureScale />
+            </local:TemperatureConvertor.TemperatureScale>
+        </local:TemperatureConvertor>
     </Window.Resources>
     <StackPanel>
         <Grid>
