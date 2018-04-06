@@ -47,7 +47,7 @@
                                    Style="{StaticResource labelStyle}" />
                         <TextBox Grid.Row="1" 
                                  Style="{StaticResource boxStyle}" 
-                                 Text="{Binding Path=Temperature, 
+                                 Text="{Binding Path=Temperature.Value, 
                                         UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
                 </DataTemplate>

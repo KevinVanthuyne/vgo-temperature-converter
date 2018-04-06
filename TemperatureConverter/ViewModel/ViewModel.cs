@@ -38,32 +38,20 @@ namespace ViewModel
         }
     }
 
-    public class TemperatureScaleViewModel : INotifyPropertyChanged
+    public class TemperatureScaleViewModel
     {
         private readonly ConverterViewModel parent;
         private readonly ITemperatureScale temperatureScale;
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public TemperatureScaleViewModel(ConverterViewModel parent, ITemperatureScale temperatureScale)
         {
             this.parent = parent;
             this.temperatureScale = temperatureScale;
-            this.parent.TemperatureInKelvin.PropertyChanged += (sender, args) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Temperature)));
+            this.Temperature = this.parent.TemperatureInKelvin.Derive(kelvin => temperatureScale.ConvertFromKelvin(kelvin));
         }
 
         public string Name => temperatureScale.Name;
 
-        public double Temperature
-        {
-            get
-            {
-                return temperatureScale.ConvertFromKelvin(parent.TemperatureInKelvin.Value);
-            }
-
-            set
-            {
-                parent.TemperatureInKelvin.Value = temperatureScale.ConvertToKevin(value);
-            }
-        }
+        public Cell<double> Temperature { get; }
     }
 }
