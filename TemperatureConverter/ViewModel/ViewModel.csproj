@@ -40,11 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Cells\Cells.csproj">
+      <Project>{16a8b7e5-8df5-4c56-8590-c1f724b48b0c}</Project>
+      <Name>Cells</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{7e03a8d7-15c1-4a80-b770-a157aa658936}</Project>
       <Name>Model</Name>
