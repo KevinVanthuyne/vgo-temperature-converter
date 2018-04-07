@@ -14,12 +14,13 @@ namespace ViewModel
         public ConverterViewModel()
         {
             this.TemperatureInKelvin = new Cell<double>();
+
             this.Kelvin = new TemperatureScaleViewModel(this, new KelvinTemperatureScale());
             this.Celsius = new TemperatureScaleViewModel(this, new CelsiusTemperatureScale());
             this.Fahrenheit = new TemperatureScaleViewModel(this, new FahrenheitTemperatureScale());
         }
 
-        public Cell<double> TemperatureInKelvin { get;  }
+        public Cell<double> TemperatureInKelvin { get; }
 
         public TemperatureScaleViewModel Kelvin { get; }
 
