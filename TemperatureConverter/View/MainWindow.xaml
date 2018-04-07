@@ -35,20 +35,26 @@
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="32"/>
                             <ColumnDefinition/>
+                            <ColumnDefinition Width="32"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition/>
-                            <RowDefinition/>
+                            <RowDefinition Height="32"/>
                         </Grid.RowDefinitions>
                     
                         <TextBlock Grid.Row="0" 
+                                   Grid.ColumnSpan="3"
                                    Text="{Binding Name}" 
                                    Style="{StaticResource labelStyle}" />
-                        <TextBox Grid.Row="1" 
+                        <TextBox Grid.Row="1"
+                                 Grid.Column="1"
                                  Style="{StaticResource boxStyle}" 
                                  Text="{Binding Path=Temperature.Value, 
                                         UpdateSourceTrigger=PropertyChanged}"/>
+                        <Button Grid.Row="1" Grid.Column="0">-</Button>
+                        <Button Grid.Row="1" Grid.Column="2">+</Button>
                     </Grid>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
