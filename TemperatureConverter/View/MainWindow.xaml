@@ -53,8 +53,8 @@
                                  Style="{StaticResource boxStyle}" 
                                  Text="{Binding Path=Temperature.Value, 
                                         UpdateSourceTrigger=PropertyChanged}"/>
-                        <Button Grid.Row="1" Grid.Column="0">-</Button>
-                        <Button Grid.Row="1" Grid.Column="2">+</Button>
+                        <Button Grid.Row="1" Grid.Column="0" Content="-" Command="{Binding Add}" CommandParameter="-1"/>
+                        <Button Grid.Row="1" Grid.Column="2" Content="+" Command="{Binding Add}" CommandParameter="+1"/>
                     </Grid>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
