@@ -41,7 +41,7 @@
 
         <TextBlock Grid.Row="0" 
                                    Grid.ColumnSpan="3"
-                                   Text="{Binding Name}" 
+                                   Text="{Binding Path=Header, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}" 
                                    Style="{StaticResource labelStyle}" />
         <TextBox Grid.Row="1"
                                  Grid.Column="1"
